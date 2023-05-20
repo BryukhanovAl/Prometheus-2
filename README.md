@@ -1,54 +1,42 @@
-# Домашнее задание к занятию "`Система мониторинга Zabbix. Часть 2`" - `Хорошев Леонид`
+# Домашнее задание к занятию "`Система мониторинга Prometheus. Часть 2`" - `Хорошев Леонид`
 
 ---
 
-### Задание 1. Установите Zabbix Server с веб-интерфейсом
+### Задание 1. Создайте файл с правилом оповещения, как в лекции, и добавьте его в конфиг Prometheus.
 
-![alt text](https://github.com/LeonidKhoroshev/hw-08-03/blob/main/zabbix1.png)
+![alt text](https://github.com/LeonidKhoroshev/hw-08-05/blob/main/prometheus1.1.png)
 ---
 
-### Задание 2 Добавьте в Zabbix два хоста и задайте им имена <фамилия и инициалы-1> и <фамилия и инициалы-2>.
+### Задание 2. Установите Alertmanager и интегрируйте его с Prometheus.
 
-![alt text](https://github.com/LeonidKhoroshev/hw-08-03/blob/main/zabbix2.png)
----
+Cкриншот Alerts из Prometheus, где правило оповещения будет в статусе Fireing
 
-
-### Задание 4. Создайте свой кастомный дашборд.
-
-![alt text](https://github.com/LeonidKhoroshev/hw-08-03/blob/main/zabbix3.png)
----
+![alt text](https://github.com/LeonidKhoroshev/hw-08-05/blob/main/prometheus2.1.png)
 
 
-### Задание 5. Создайте карту и расположите на ней два своих хоста
+Cкриншот из Alertmanager, где будет видно действующее правило оповещения
 
-![alt text](https://github.com/LeonidKhoroshev/hw-08-03/blob/main/zabbix4.1.png)
-
-![alt text](https://github.com/LeonidKhoroshev/hw-08-03/blob/main/zabbix4.2.png)
+![alt text](https://github.com/LeonidKhoroshev/hw-08-05/blob/main/prometheus2.2.png)
 ---
 
 
-### Задание 6. Создайте UserParameter на bash и прикрепите его к созданному вами ранее шаблону. Он должен вызывать скрипт, который:
+### Задание 3. Активируйте экспортёр метрик в Docker и подключите его к Prometheus.
 
-при получении 1 будет возвращать ваши ФИО,
+Cкриншот браузера с открытым эндпоинтом
 
-при получении 2 будет возвращать текущую дату.
+![alt text](https://github.com/LeonidKhoroshev/hw-08-05/blob/main/prometheus.3.1.png)
 
-Код скрипта:
 
-#!/bin/bash
+Cкриншот списка таргетов из интерфейса Prometheus
 
-read a
+![alt text](https://github.com/LeonidKhoroshev/hw-08-05/blob/main/prometheus.3.2.png)
+---
 
-if [[ "$a" -eq 1 ]]; then
 
-    echo "Khoroshev Leonid"
+### Задание 4. Создайте свой дашборд Grafana с различными метриками Docker и сервера, на котором он стоит.
 
-elif [[ "$a" -eq 2 ]]; then
+![alt text](https://github.com/LeonidKhoroshev/hw-08-05/blob/main/prometheus4.2.png)
+---
 
-    echo $(date '+%Y-%m-%d')
 
-else
 
-    echo "I don't know what is it"
-
-fi
